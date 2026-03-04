@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resonance 🎵
 
-## Getting Started
+> *Find your frequency.*
 
-First, run the development server:
+Resonance est une app de découverte musicale basée sur le swipe. Like ou passe des titres, et Resonance génère une playlist personnalisée selon tes goûts.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Fonctionnalités
+
+- 🎴 **Swipe** sur des titres (drag ou boutons)
+- 🖼️ **Pochettes d'album** récupérées via l'API iTunes
+- 🎯 **Recommandations** basées sur les genres et artistes likés
+- 🔄 **3 rounds** si tu ne likes rien — nouveaux titres à chaque fois
+- 🎧 **Ouverture Spotify** directe pour chaque recommandation
+- 🗃️ **Base musicale curatée** — 100+ titres soigneusement choisis (jazz, techno, afrobeat, hip-hop, classique, indie, house...)
+
+---
+
+## Stack
+
+- [Next.js 15](https://nextjs.org/) — framework fullstack React
+- TypeScript
+- iTunes Search API — pochettes d'album (gratuit, sans clé)
+- Last.fm API — optionnel, non utilisé en prod
+
+---
+
+## Structure du projet
+
+```
+resonance/
+├── app/
+│   ├── page.tsx                  # Point d'entrée
+│   └── api/
+│       ├── artwork/
+│       │   └── route.ts          # Proxy iTunes API (pochettes)
+│       └── tracks/
+│           └── route.ts          # Sélection aléatoire de titres
+├── components/
+│   └── SwipeCard.tsx             # Composant principal (swipe + résultats)
+├── lib/
+│   └── musicDatabase.ts          # Base de données musicale curatée
+└── .env.local                    # Variables d'environnement (non versionné)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lancer le projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Ouvre [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Prochaines étapes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Connexion Spotify OAuth
+- [ ] Création automatique de playlist dans Spotify
+- [ ] Filtrage par genre au démarrage
+- [ ] Mode mobile / touch events
