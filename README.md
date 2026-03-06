@@ -6,7 +6,7 @@ Resonance est une app de découverte musicale basée sur le swipe. Like ou passe
 
 ## Aperçu
 
-![Capture de l'application Resonance](./public/app-screenshot.png)
+<img src="./public/app-screenshot.png" alt="Capture de l'application Resonance" width="360" />
 
 ---
 
