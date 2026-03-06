@@ -4,6 +4,10 @@
 
 Resonance est une app de découverte musicale basée sur le swipe. Like ou passe des titres, et Resonance génère une playlist personnalisée selon tes goûts.
 
+## Aperçu
+
+![Capture de l'application Resonance](./public/app-screenshot.png)
+
 ---
 
 ## Fonctionnalités
